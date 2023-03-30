@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currecy calculator</title>
+    <script defer src="js/script.js"></script>
+    <link href="css/styles.css" rel="stylesheet">   
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form class="js-form" class="form">
+             <fieldset class="form__fieldset">
+                 <legend class="form__legend form__legend--special">Kalkulator walutowy</legend>
+                 <p> 
+                     <label>
+                        <strong class="form__text">Przelicz z:</strong>
+                        <select class="js-select1 form__select" name="currency1">
+                            <option class="js-PLN" value="PLN">PLN</option>
+                            <option class="js-EUR" value="EUR">EUR</option>
+                            <option class="js-USD" value="USD">USD</option>
+                            <option class="js-GBP" value="GBP">GBP</option>
+                            <option class="js-NOK" value="NOK">NOK</option> 
+                        </select>
+                    </label>
+                </p>
+                
+                <p>   
+                    <label>
+                        <strong class="form__text">Przelicz na:</strong>
+                        <select class="js-select2 form__select form__select--center" name="currency2">
+                            <option value="EUR">EUR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="USD">USD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="NOK">NOK</option>
+                        </select>
+                </label>
+                </p>
+                <p>
+                    <label>
+                        <strong class="form__text">Kwota</strong>
+                        <input class="js-currency1Amount form__field" name="EUR" type="number" min="1" step="any" required value="0" data-bm="52">
+                    </label>
+                </p>
+                <p>
+                    <strong class="form__text form__text--center">Kwota po przewalutowaniu:</strong> 
+                </p>
+                <p>
+                    <strong class="js-currency2Amount form__text--special">0</strong>
+                </p>
+                <footer class="form__footer">
+                    Kursy średni walut Santander Bank Polska z dnia 28.03.2023.
+                </footer>
+             </fieldset>
+         </form>
+    </div>
+</body>
+</html>

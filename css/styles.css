@@ -1,0 +1,22 @@
+html{
+    font-size: large;
+    box-sizing: border-box;
+    background: url(https://wallpaperaccess.com/full/825742.jpg) fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    display: grid;
+}
+*, 
+::after,
+::before {
+    box-sizing: inherit;
+}
+.container{
+    text-align: center;
+    max-width: 1200px;
+    max-height: 800px;
+    font-family: 'Tilt Neon', cursive;
+    padding: 10px;
+    margin: 0 auto;
+}

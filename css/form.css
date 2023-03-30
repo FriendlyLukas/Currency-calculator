@@ -1,0 +1,60 @@
+.form__labelText {
+    display: inline-block;
+    margin-right: 5%;
+    width: 50px;
+}
+.form__fieldset{
+    background-color:#8b691bf5;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 25% 5%;
+    box-shadow: 0 20px 10px 10px rgba(20, 20, 2, 0.596);
+
+}
+.form__legend{
+    font-weight: 900;
+    font-stretch: extra-condensed;
+    background-color:#574312;
+    color: aliceblue;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+}
+.form__select{
+    background-color:#9a8451f5;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    padding: 7px 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.form__field{
+    border: 2px solid #ccc;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 3px;
+    padding: 7px 10px;
+    margin-top: 10px;
+}
+.form__select--center{
+    margin-left: -1px;
+}
+.form__text{
+    margin: 0 20px;
+}
+.form__text--center{
+    padding-left: 18px;
+}
+.form__text--special{
+    font-size: x-large;
+}
+.form__legend--special{
+    font-size: x-large;
+}
+.form__footer{
+    font-size: small;
+    text-align: center;
+    margin-top: auto;
+}
+
