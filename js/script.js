@@ -10,6 +10,8 @@ let usdRate = 4.32;
 let nokRate = 0.41;
 let gbpRate = 5.31;
 
+console.log("Dzień dobry!")
+
 
 formElement.addEventListener("input", () =>{
 
