@@ -12,3 +12,6 @@ Application allow for convert following currences each other: PLN (Poland), EUR 
 |-----------------------|-----------------------|-----------------------|
 |forms					|styling form           |switch			        |     
 |select        		    |background image       |input			        |
+
+
+Link to page : https://friendlylukas.github.io/Currency-calculator/
