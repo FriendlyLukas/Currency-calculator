@@ -1,131 +1,144 @@
-let currency1AmountElement = document.querySelector(".js-currency1Amount");
-let currency2AmountElement = document.querySelector(".js-currency2Amount");
-let formElement = document.querySelector(".js-form");
-let currency1Element = document.querySelector(".js-select1");
-let currency2Element = document.querySelector(".js-select2");
+{
+    const calculateResult = (currency1,currency2,amount) => {
+
+        const plnRate = 1;
+        const eurRate = 4.68;
+        const usdRate = 4.32;
+        const nokRate = 0.41;
+        const gbpRate = 5.31;    
+
+        switch(currency1){
+            case "EUR":
+                switch(currency2){
+                    case "PLN":
+                        return amount*(eurRate/plnRate);
                         
-let plnRate = 1;
-let eurRate = 4.68;
-let usdRate = 4.32;
-let nokRate = 0.41;
-let gbpRate = 5.31;
-
-console.log("Dzień dobry!")
-
-
-formElement.addEventListener("input", () =>{
-
-    let currency1 = currency1Element.value;
-    let currency2 = currency2Element.value;
-    let currency1Amount;
-    let currency2Amount = currency2AmountElement.value;
-
-    if (currency1AmountElement.value<0) {
-        currency1AmountElement.value = 0;
-    } else {
-        currency1Amount = currency1AmountElement.value;
-    }
-
-    switch(currency1){
-        case "EUR":
-            switch(currency2){
-                case "PLN":
-                    currency2Amount = currency1Amount*(eurRate/plnRate);
-                    break;
-                case "EUR":
-                    currency2Amount = currency1Amount*(eurRate/eurRate);
-                    break;
-                case "USD":
-                    currency2Amount = currency1Amount*(eurRate/usdRate);
-                    break;
-                case "NOK":
-                    currency2Amount = currency1Amount*(eurRate/nokRate);
-                    break;
-                case "GBP":
-                    currency2Amount = currency1Amount*(eurRate/gbpRate);
-                    break;
+                    case "EUR":
+                        return amount*(eurRate/eurRate);
+                        
+                    case "USD":
+                        return amount*(eurRate/usdRate);
+                        
+                    case "NOK":
+                        return amount*(eurRate/nokRate);
+                        
+                    case "GBP":
+                        return amount*(eurRate/gbpRate);
+                        
+            }
+            
+    
+            case "PLN":
+                switch(currency2){
+                    case "PLN":
+                        return amount*(plnRate/plnRate);
+                        
+                    case "EUR": 
+                        return amount*(plnRate/eurRate);
+                        
+                    case "USD":
+                        return amount*(plnRate/usdRate);
+                        
+                    case "NOK":
+                        return amount*(plnRate/nokRate);
+                        
+                    case "GBP":
+                        currency2Amount  =amount*(plnRate/gbpRate);
+                    
+            }
+                
+    
+            case "USD":
+                switch(currency2){
+                        case "PLN": 
+                            return amount*(usdRate/plnRate);
+                            
+                        case "EUR":
+                            return amount*(usdRate/eurRate);
+                        
+                        case "USD":
+                            return amount*(usdRate/usdRate);
+                            
+                        case "NOK":
+                            return amount*(usdRate/nokRate);
+                            
+                        case "GBP":
+                            return amount*(usdRate/gbpRate);
+                            
+            }
+            
+            case "NOK":
+                switch(currency2){
+                        case "PLN": 
+                            return amount*(nokRate/plnRate);
+                            
+                        case "EUR":
+                            return amount*(nokRate/eurRate);
+                        
+                        case "USD":
+                            return amount*(nokRate/usdRate);
+                            
+                        case "NOK":
+                            return amount*(nokRate/nokRate);
+                             
+                        case "GBP":
+                            return amount*(nokRate/gbpRate);
+                            
+                }
+            
+            case "GBP":
+                switch(currency2){
+                        case "PLN": 
+                            return amount*(gbpRate/plnRate);
+                                               
+                        case "EUR":
+                            return amount*(gbpRate/eurRate);
+                             
+                        case "USD":
+                            return amount*(gbpRate/usdRate);
+                                
+                        case "NOK":
+                            return amount*(gbpRate/nokRate);
+                               
+                        case "GBP":
+                            return amount*(gbpRate/gbpRate);                  
+            }
         }
-        break;
-
-        case "PLN":
-            switch(currency2){
-                case "PLN":
-                    currency2Amount = currency1Amount*(plnRate/plnRate);
-                    break;
-                case "EUR": 
-                    currency2Amount = currency1Amount*(plnRate/eurRate);
-                    break;
-                case "USD":
-                    currency2Amount = currency1Amount*(plnRate/usdRate);
-                    break;
-                case "NOK":
-                    currency2Amount = currency1Amount*(plnRate/nokRate);
-                    break;
-                case "GBP":
-                    currency2Amount  =currency1Amount*(plnRate/gbpRate);
-                break;
-            }
-            break;
-
-        case "USD":
-            switch(currency2){
-                    case "PLN": 
-                        currency2Amount = currency1Amount*(usdRate/plnRate);
-                        break;
-                    case "EUR":
-                        currency2Amount = currency1Amount*(usdRate/eurRate);
-                    break;
-                    case "USD":
-                        currency2Amount = currency1Amount*(usdRate/usdRate);
-                        break;
-                    case "NOK":
-                        currency2Amount = currency1Amount*(usdRate/nokRate);
-                        break;
-                    case "GBP":
-                        currency2Amount = currency1Amount*(usdRate/gbpRate);
-                        break;
-            }
-        break;
-        case "NOK":
-            switch(currency2){
-                    case "PLN": 
-                        currency2Amount = currency1Amount*(nokRate/plnRate);
-                        break;
-                    case "EUR":
-                        currency2Amount = currency1Amount*(nokRate/eurRate);
-                    break;
-                    case "USD":
-                        currency2Amount = currency1Amount*(nokRate/usdRate);
-                        break;
-                    case "NOK":
-                        currency2Amount = currency1Amount*(nokRate/nokRate);
-                        break; 
-                    case "GBP":
-                        currency2Amount = currency1Amount*(nokRate/gbpRate);
-                        break;
-            }
-        break;
-        case "GBP":
-            switch(currency2){
-                    case "PLN": 
-                        currency2Amount = currency1Amount*(gbpRate/plnRate);
-                        break;                   
-                    case "EUR":
-                        currency2Amount = currency1Amount*(gbpRate/eurRate);
-                        break; 
-                    case "USD":
-                        currency2Amount = currency1Amount*(gbpRate/usdRate);
-                        break;    
-                    case "NOK":
-                        currency2Amount = currency1Amount*(gbpRate/nokRate);
-                        break;   
-                    case "GBP":
-                        currency2Amount = currency1Amount*(gbpRate/gbpRate);
-                        break;       
-            }
-        break;
     }
 
-currency2AmountElement.innerText=currency2Amount.toFixed(2);
+    const updateResultText = (result) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText=result.toFixed(2);
+    }
 
-});  
+    const onFormInput = () => {
+    
+        const amountElement = document.querySelector(".js-amount");
+        const currency1Element = document.querySelector(".js-select1");
+        const currency2Element = document.querySelector(".js-select2");
+    
+        const currency1 = currency1Element.value;
+        const currency2 = currency2Element.value;
+        let amount;
+    
+        if (amountElement.value<0) {
+            amountElement.value = 0;
+        } else {
+            amount = amountElement.value;
+        }
+    
+        let  result = calculateResult(currency1, currency2, amount);
+    
+        updateResultText(result);
+    
+    };
+
+    const init = () =>{
+        
+        const formElement = document.querySelector(".js-form");
+                                
+        formElement.addEventListener("input", onFormInput);
+    }
+    
+    init();
+}
