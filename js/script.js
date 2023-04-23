@@ -106,9 +106,9 @@
         }
     }
 
-    const updateResultText = (result) => {
+    const updateResultText = (result, amount, currency1, currency2) => {
         const resultElement = document.querySelector(".js-result");
-        resultElement.innerText=result.toFixed(2);
+        resultElement.innerHTML = `<i>${amount} ${currency1} = </i>${result.toFixed(2)} ${currency2}`;
     }
 
     const onFormInput = () => {
@@ -129,7 +129,7 @@
     
         let  result = calculateResult(currency1, currency2, amount);
     
-        updateResultText(result);
+        updateResultText(result, amount, currency1, currency2);
     
     };
 
