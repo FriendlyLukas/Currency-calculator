@@ -5,6 +5,8 @@ html{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
+    max-width: 1200px;
+    max-height: 800px;
 }
 *, 
 ::after,
@@ -13,12 +15,11 @@ html{
 }
 .container{
     text-align: center;
-    max-width: 1200px;
-    max-height: 800px;
     font-family: 'Tilt Neon', cursive;
     padding: 10px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-basis: 700px;
 }
