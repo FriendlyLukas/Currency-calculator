@@ -1,13 +1,45 @@
-{
-    const calculateResult = (currency1,currency2,amount) => {
-
+{    
+    const choseCurrency = (currency1,currency2) => {
         const plnRate = 1;
         const eurRate = 4.68;
         const usdRate = 4.32;
         const nokRate = 0.41;
-        const gbpRate = 5.31;    
+        const gbpRate = 5.31; 
 
-        switch(currency1){
+        switch (currency1){
+            case "EUR":
+                return fromRate = eurRate; 
+            case "PLN":
+                return fromRate = plnRate;
+            case "USD":
+                return fromRate = usdRate;
+            case "GBP":
+                return fromRate = gbpRate;
+            case "NOK":
+                return fromRate = nokRate;           
+        }
+          switch (currency2){
+            case "EUR":
+                return toRate = eurRate; 
+            case "PLN":
+                return toRate = plnRate;
+            case "USD":
+                return toRate = usdRate;
+            case "GBP":
+                return toRate = gbpRate;
+            case "NOK":
+                return toRate = nokRate;           
+        }
+    }
+
+    const calculateResult = (amount, currency1, currency2, fromRate,toRate) => {
+
+        choseCurrency(currency1,currency2);
+
+        return amount*(fromRate/toRate);   
+    }        
+    /*
+    switch(currency1){
             case "EUR":
                 switch(currency2){
                     case "PLN":
@@ -25,7 +57,7 @@
                     case "GBP":
                         return amount*(eurRate/gbpRate);
                         
-            }
+                }
             
     
             case "PLN":
@@ -45,7 +77,7 @@
                     case "GBP":
                         currency2Amount  =amount*(plnRate/gbpRate);
                     
-            }
+                }
                 
     
             case "USD":
@@ -65,7 +97,7 @@
                         case "GBP":
                             return amount*(usdRate/gbpRate);
                             
-            }
+                }
             
             case "NOK":
                 switch(currency2){
@@ -102,9 +134,9 @@
                                
                         case "GBP":
                             return amount*(gbpRate/gbpRate);                  
-            }
-        }
+                }
     }
+    */
 
     const updateResultText = (result, amount, currency1, currency2) => {
         const resultElement = document.querySelector(".js-result");
@@ -127,7 +159,7 @@
             amount = amountElement.value;
         }
     
-        let  result = calculateResult(currency1, currency2, amount);
+        let  result = calculateResult(amount, currency1, currency2);
     
         updateResultText(result, amount, currency1, currency2);
     
